@@ -53,7 +53,7 @@
         <p><strong>Hobbies:</strong> Writing, Coding, Designing, Reading</p>
         <p><strong>Fun Fact:</strong> I published my 1st book when I was 17</p>
       </div>
-      <a href="https://drive.google.com/file/d/13X_hSV-x12ex7t1KDhyd_iU9RVfRb19r/view?usp=sharing" class="resume-button" target="_blank">📄 Download My Resume</a>
+      <a href="https://drive.google.com/uc?export=download&id=13X_hSV-x12ex7t1KDhyd_iU9RVfRb19r" class="resume-button" download="Maya_Mukabe_Resume.pdf">📄 Download My Resume</a>
 
 
     </div>
@@ -69,7 +69,7 @@
       <img src="Images/Digital Sign-in.png" alt="Digital Sign-In Project">
       <h3>Digital Sign-In System</h3>
       <p>Automated sign-in/out system using Google Forms and Apps Script. Improved student check-in efficiency by 60%.</p>
-      <p><strong>Tech:</strong> Google Apps Script, Google Formsz, Google Sheets</p>
+      <p><strong>Tech:</strong> Google Apps Script, Google Forms, Google Sheets</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScO46uvGYNb5km2aDS-0J_11SGP4jMLSw-AVQMn9JFaClLpZA/viewform" class="project-link" target="_blank">🔗 View Project</a>
     </div>
 
@@ -99,9 +99,21 @@
     <h2>Contact Me</h2>
     <p>Have a question, collaboration, or just want to connect? Send me a message below or reach out directly.</p>
 
-    <form>
-      
-    </form>   
+    <form id="contactForm" class="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
 
     <div class="contact-info">
       <p>📧 mmukabe@gsumail.gram.edu</p>
@@ -109,6 +121,36 @@
     </div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Maya Mukabe</h3>
+      <p>Author | Developer | CIS Student</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="authorship.html">Writing</a></li>
+      </ul>
+    </div>
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="https://linkedin.com/in/maya-mukabe" target="_blank">LinkedIn</a></li>
+        <li><a href="mailto:mmukabe@gsumail.gram.edu">Email</a></li>
+        <li><a href="https://drive.google.com/uc?export=download&id=13X_hSV-x12ex7t1KDhyd_iU9RVfRb19r" download="Maya_Mukabe_Resume.pdf">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2024 Maya Mukabe. All rights reserved.</p>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
