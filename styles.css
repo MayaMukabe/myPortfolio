@@ -1,0 +1,1444 @@
+
+/* ==========================================
+   1. RESET AND BASE STYLES
+========================================== */
+
+/* Removes default spacing from all HTML elements.
+   Border-box ensures padding and borders are included
+   within an element's total width and height. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Sets the default font, text color, and background
+   color used throughout all five portfolio pages. */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #e2d3db;
+    color: #2f2d3b;
+}
+
+
+/* ==========================================
+   2. NAVIGATION BAR - ALL PAGES
+========================================== */
+
+/* Creates a fixed navigation bar at the top of the page.
+   The z-index keeps it above other page elements,
+   while the box-shadow adds a shadow underneath. */
+header {
+    background-color: #9389bd;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Uses Flexbox to place the website logo on the left
+   and the navigation links on the right.
+   Align-items centers them vertically. */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles the website logo with a decorative font
+   and removes the default bottom margin. */
+nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #2f2d3b;
+    margin-bottom: 0;
+}
+
+/* Uses Flexbox to arrange navigation links horizontally.
+   Gap adds equal spacing between each link.
+   List markers and unnecessary spacing are removed. */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+/* Removes underlines from navigation links and
+   adds a smooth color transition when hovered. */
+nav ul li a {
+    text-decoration: none;
+    color: #2f2d3b;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* Changes the link color when hovered or when
+   the user is currently viewing that page. */
+nav ul li a:hover,
+nav ul li a.active {
+    color: #5e49b8;
+}
+
+
+/* ==========================================
+   3. HOME PAGE
+========================================== */
+
+/* Hero Section
+   Uses Flexbox to center the introduction section
+   horizontally and vertically on the screen.
+   I used a linear gradient to create a smooth color transition
+   between the two background colors. */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e2d3db, #9389bd);
+    padding: 120px 40px 80px;
+}
+
+/* Uses CSS Grid to divide the hero into two equal columns:
+   one for the introduction text and another for the photo.
+   Gap separates the columns, and margin centers the layout. */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Aligns the introduction text to the left. */
+.hero-content {
+    text-align: left;
+}
+
+/* Styles the small welcome heading with uppercase-style
+   letter spacing and a purple text color. */
+.hero-content h4 {
+    font-size: 14px;
+    color: #6768ab;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* Styles the main introduction heading with a large
+   decorative font and a subtle text shadow. */
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    color: #5e49b8;
+    margin-bottom: 15px;
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles the professional interest heading below the name. */
+.hero-content h3 {
+    font-size: 23px;
+    color: #2f2d3b;
+    margin-bottom: 20px;
+}
+
+/* Improves the readability of the introduction paragraph
+   by increasing its font size and line spacing. */
+.hero-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Hero Buttons
+   Uses Flexbox to place the two buttons side by side.
+   Flex-wrap allows them to move onto another line
+   when there is not enough space. */
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Applies shared styling to both hero buttons,
+   including padding, rounded corners, and smooth
+   background color transitions. */
+.cta-button,
+.second-button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Styles the primary button with a purple background. */
+.cta-button {
+    background-color: #6768ab;
+    color: white;
+}
+
+/* Darkens the primary button and adds a shadow on hover. */
+.cta-button:hover {
+    background-color: #5e49b8;
+    box-shadow: 0 4px 12px rgba(94, 73, 184, 0.3);
+}
+
+/* Styles the secondary button with a transparent
+   background and a visible purple border. */
+.second-button {
+    background-color: transparent;
+    color: #5e49b8;
+    border: 2px solid #6768ab;
+}
+
+/* Fills the secondary button with purple when hovered. */
+.second-button:hover {
+    background-color: #6768ab;
+    color: white;
+}
+
+/* Hero Profile Picture
+   Centers the profile image inside its container. */
+.hero-image {
+    text-align: center;
+}
+
+/* Controls the profile image's size and appearance.
+   Object-fit crops the image without stretching it,
+   while the border, rounded corners, and shadow
+   make the picture stand out. */
+.hero-image img {
+    width: 100%;
+    max-width: 380px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 8px dotted rebeccapurple;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 2);
+}
+
+/* Highlights Section
+   Creates a separate background area for the three
+   main interests displayed below the hero section. */
+.highlights-section {
+    background-color: #f1e9f6;
+    padding: 80px 30px;
+    text-align: center;
+}
+
+/* Styles the section heading with the decorative font. */
+.highlights-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5e49b8;
+    margin-bottom: 15px;
+}
+
+/* Limits the introduction paragraph's width and
+   centers it above the highlight cards. */
+.highlights-intro {
+    max-width: 650px;
+    margin: 0 auto 40px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Uses CSS Grid to display three highlight cards
+   in one row with equal column widths. */
+.highlights-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Creates white highlight cards with internal spacing,
+   rounded corners, a border, and a subtle shadow. */
+.highlight-card {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    border: 2px solid #e2d3db;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+/* Styles the heading inside each highlight card. */
+.highlight-card h3 {
+    color: #6768ab;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+/* Adds readable text spacing inside the cards. */
+.highlight-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Styles the links inside the highlight cards
+   and underlines them when hovered. */
+.highlight-card a {
+    color: #5e49b8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.highlight-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   4. ABOUT ME PAGE
+========================================== */
+
+/* Top Banner
+   Creates a background area with enough top padding
+   to prevent the fixed navigation bar from covering
+   the banner image. */
+.about-banner {
+    padding: 100px 30px 30px;
+    background-color: #f1e9f6;
+}
+
+/* Displays the banner as a wide, centered image.
+   Object-fit crops it to fill the specified height,
+   while border-radius rounds the corners. */
+.about-banner img {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    height: 380px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 18px;
+}
+
+/* Introduction Section
+   Adds background color and spacing around the
+   personal introduction and profile picture. */
+.about-intro {
+    background-color: #f1e9f6;
+    padding: 50px 30px 70px;
+}
+
+/* Styles the introductory heading with italic
+   decorative text centered above the content. */
+.about-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-style: italic;
+    text-align: center;
+    color: #5e49b8;
+    margin-bottom: 40px;
+}
+
+/* Uses CSS Grid to create two columns:
+   a smaller column for the profile picture and a
+   larger column for the personal introduction. */
+.about-intro-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Makes the profile picture responsive and adds
+   rounded corners and a subtle shadow. */
+.about-intro-image img {
+    width: 100%;
+    max-width: 380px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Adds a vertical line and left padding to visually
+   separate the introduction text from the picture. */
+.about-intro-content {
+    border-left: 2px solid #9389bd;
+    padding-left: 35px;
+}
+
+/* Styles the "Beyond the Resume" heading. */
+.about-intro-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #5e49b8;
+    margin-bottom: 20px;
+}
+
+/* Adds consistent spacing and line height
+   to the personal introduction paragraphs. */
+.about-intro-content p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Resume Button
+   Styles the resume link to appear as a button,
+   with purple coloring and rounded corners. */
+.resume-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #6768ab;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Darkens the resume button and adds a shadow
+   when the user moves the mouse over it. */
+.resume-button:hover {
+    background-color: #5e49b8;
+    color: white;
+    box-shadow: 0 4px 12px rgba(94, 73, 184, 0.3);
+}
+
+/* My Journey Section
+   Creates a centered section with a contrasting
+   background for education, AI/ML, and authorship. */
+.journey-section {
+    background-color: #e2d3db;
+    padding: 70px 30px;
+    text-align: center;
+}
+
+/* Styles the heading above the journey cards. */
+.journey-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5e49b8;
+    margin-bottom: 35px;
+}
+
+/* Uses CSS Grid to arrange the three journey cards
+   in equal columns across the page. */
+.journey-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Adds a light background, spacing, rounded corners,
+   and shadows to each journey card. */
+.journey-card {
+    background-color: #f8f5fc;
+    padding: 30px 25px;
+    border-radius: 15px;
+    border: 1px solid #e2d3db;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+/* Styles the headings and paragraph text
+   within the journey cards. */
+.journey-card h3 {
+    color: #6768ab;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.journey-card p {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Styles the authorship link and adds
+   an underline when the link is hovered. */
+.journey-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #5e49b8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.journey-card a:hover {
+    text-decoration: underline;
+}
+
+/* Quick Facts Section
+   Creates a separate area for skills, interests,
+   achievements, leadership, and hobbies. */
+.about-facts-section {
+    background-color: #f1e9f6;
+    padding: 70px 30px 90px;
+}
+
+/* Centers and styles the Quick Facts heading. */
+.about-facts-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5e49b8;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Uses CSS Grid to display the six fact cards
+   in two equal columns with spacing between them. */
+.about-facts-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Gives each fact card a white background,
+   rounded corners, padding, and a light shadow. */
+.fact-card {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e2d3db;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles the fact card headings and paragraphs
+   with consistent font sizes and spacing. */
+.fact-card h3 {
+    font-size: 20px;
+    color: #6768ab;
+    margin-bottom: 15px;
+}
+
+.fact-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+/* Adds indentation to the unordered lists and
+   improves spacing between the list items. */
+.fact-card ul {
+    padding-left: 20px;
+}
+
+.fact-card li {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   5. PROJECTS PAGE
+========================================== */
+
+/* Projects Heading
+   Creates an introductory section with enough
+   top padding to clear the fixed navigation bar. */
+.projects-heading {
+    background-color: #f1e9f6;
+    text-align: center;
+    padding: 130px 30px 45px;
+}
+
+/* Styles the main Projects page heading. */
+.projects-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    color: #5e49b8;
+    margin-bottom: 20px;
+}
+
+/* Styles the motivational quote with italic,
+   decorative text and space below it. */
+.projects-heading blockquote p {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+/* Styles the author's name below the quote. */
+.projects-heading cite {
+    color: #6768ab;
+    font-size: 15px;
+    font-style: normal;
+}
+
+/* Creates a centered horizontal line separating
+   the quote from the projects introduction.
+   The opacity also overrides Bootstrap's default
+   horizontal rule appearance. */
+.projects-heading hr {
+    border: none;
+    height: 2px;
+    background-color: #9389bd;
+    max-width: 500px;
+    margin: 25px auto;
+    opacity: 1;
+}
+
+/* Styles the introductory paragraph directly
+   inside the projects heading section. */
+.projects-heading > p {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Projects Gallery
+   Adds background color and spacing around
+   the collection of project cards. */
+.projects-gallery-section {
+    background-color: #f1e9f6;
+    padding: 20px 30px 90px;
+}
+
+/* Uses CSS Grid to display six project cards
+   in three equal columns on larger screens.
+   BOOTSTRAP: The cards inside this grid use
+   Bootstrap's .card component and utility classes. */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* BOOTSTRAP - Project Cards
+   Customizes the Bootstrap .card component with
+   a white background, rounded corners, borders,
+   and shadows for a consistent appearance. */
+.gallery-card {
+    background-color: #ffffff;
+    border: 1px solid #e2d3db;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* BOOTSTRAP - Card Images
+   Customizes Bootstrap's .card-img-top class.
+   Object-fit crops images to fill the same dimensions,
+   keeping all project cards visually consistent. */
+.gallery-card .card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* BOOTSTRAP - Card Body
+   Adds internal spacing around the text and buttons
+   inside each Bootstrap project card. */
+.gallery-card .card-body {
+    padding: 25px;
+}
+
+/* BOOTSTRAP - Card Titles
+   Customizes Bootstrap's .card-title class using
+   the portfolio's decorative font and purple color. */
+.gallery-card .card-title {
+    font-family: 'Playfair Display', serif;
+    color: #5e49b8;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* BOOTSTRAP - Card Text
+   Adjusts font size, color, and line spacing
+   within the Bootstrap project cards. */
+.gallery-card .card-text {
+    color: #2f2d3b;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Highlights the technologies used in each
+   project with smaller, bold purple text. */
+.project-tech {
+    color: #6768ab;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* BOOTSTRAP - Project Buttons
+   Adds custom colors and spacing to links using
+   Bootstrap's .btn class.
+   The HTML also uses .mt-auto to push these buttons
+   toward the bottom of the Flexbox card body. */
+.gallery-button {
+    background-color: #6768ab;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* BOOTSTRAP - Button Hover
+   Changes the project button color when hovered. */
+.gallery-button:hover {
+    background-color: #5e49b8;
+    color: white;
+}
+
+/* Project Breakdown Table
+   Creates a separate section for displaying
+   each project's purpose and technologies. */
+.project-table-section {
+    background-color: #e2d3db;
+    padding: 70px 30px;
+    text-align: center;
+}
+
+/* Styles the Project Breakdown heading
+   and the short description below it. */
+.project-table-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5e49b8;
+    margin-bottom: 15px;
+}
+
+.project-table-section p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* Centers the table and allows horizontal scrolling
+   on smaller screens instead of cutting off columns. */
+.project-table-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+/* Styles the HTML table with a border, rounded
+   corners, white background, and spaces between cells.
+   This is a custom HTML table, not Bootstrap's .table. */
+.project-table {
+    width: 100%;
+    border: 2px solid #9389bd;
+    border-spacing: 4px;
+    border-collapse: separate;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+/* Positions the table caption above the table
+   and centers it with bold purple text. */
+.project-table caption {
+    caption-side: top;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    color: #6768ab;
+    padding: 10px;
+}
+
+/* Applies consistent borders, padding, and text
+   alignment to all table headers and data cells. */
+.project-table th,
+.project-table td {
+    border: 1px solid #e2d3db;
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Adds a purple background to table header cells. */
+.project-table th {
+    background-color: #9389bd;
+    color: #2f2d3b;
+    text-align: center;
+}
+
+/* Styles the main table title that spans four
+   columns using colspan in the HTML. */
+.project-table .table-title {
+    background-color: #6768ab;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+}
+
+/* Styles category cells that group related projects.
+   Some of these cells use rowspan in the HTML
+   to extend across multiple project rows. */
+.project-table .category-cell {
+    background-color: #f1e9f6;
+    color: #5e49b8;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Applies alternating background colors to even
+   table rows, excluding the category cells.
+   This makes the table easier to read. */
+.project-table tr:nth-child(even) td:not(.category-cell) {
+    background-color: #f8f5fc;
+}
+
+
+/* ==========================================
+   6. AUTHORSHIP PAGE
+========================================== */
+
+/* Authorship Heading
+   Creates a centered introduction with a soft
+   gradient and top spacing for the fixed navbar. */
+.authorship-hero {
+    background: linear-gradient(to bottom, #e2d3db, #f1e9f6);
+    padding: 130px 30px 60px;
+    text-align: center;
+}
+
+/* Styles the main authorship heading. */
+.authorship-hero h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: #5e49b8;
+    margin-bottom: 20px;
+}
+
+/* Centers the introduction paragraph and limits
+   its width to keep longer text easy to read. */
+.authorship-hero p {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Publications Section
+   Adds background color and spacing around
+   the books, poetry, and newspaper article. */
+.publications-section {
+    background-color: #f1e9f6;
+    padding: 60px 20px 90px;
+}
+
+/* Styles and centers the publications heading. */
+.publications-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5e49b8;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* BOOTSTRAP - Publication Cards
+   Customizes Bootstrap's .card component with
+   borders, rounded corners, and subtle shadows.
+   The HTML uses Bootstrap's .row and .col classes
+   to display the publications responsively. */
+.publication-card {
+    background-color: #ffffff;
+    border: 1px solid #e2d3db;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* BOOTSTRAP - Publication Images
+   Customizes Bootstrap's .card-img-top class.
+   Object-fit: contain displays the entire book cover
+   or article image without cropping it. */
+.publication-card .card-img-top {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #f8f5fc;
+}
+
+/* Adjusts the newspaper article image to use
+   a white background while preserving its full size. */
+.publication-card .article-image {
+    object-fit: contain;
+    background-color: #ffffff;
+}
+
+/* BOOTSTRAP - Card Body
+   Adds internal spacing around each publication's
+   title, description, and button. */
+.publication-card .card-body {
+    padding: 25px;
+}
+
+/* BOOTSTRAP - Card Titles
+   Styles the publication titles using the
+   decorative font and purple text color. */
+.publication-card .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: #5e49b8;
+    margin-bottom: 10px;
+}
+
+/* Highlights the type of publication,
+   such as Published Book or Newspaper Article. */
+.publication-type {
+    font-size: 13px;
+    font-weight: bold;
+    color: #6768ab;
+    margin-bottom: 15px;
+}
+
+/* BOOTSTRAP - Card Text
+   Improves readability of publication descriptions
+   using consistent font sizes and line spacing. */
+.publication-card .card-text {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* BOOTSTRAP - Publication Buttons
+   Customizes links that also use Bootstrap's
+   .btn class, creating purple rounded buttons.
+   The HTML uses .mt-auto to align buttons at
+   the bottom of the Flexbox card bodies. */
+.publication-button {
+    background-color: #6768ab;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+/* BOOTSTRAP - Button Hover
+   Darkens the publication buttons when hovered. */
+.publication-button:hover {
+    background-color: #5e49b8;
+    color: white;
+}
+
+/* BOOTSTRAP - Coming Soon Label
+   Styles the span using Bootstrap's .btn class.
+   The default cursor shows that this label
+   is not an active clickable button. */
+.coming-soon {
+    background-color: #e2d3db;
+    color: #5e49b8;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: default;
+}
+
+/* Styles the publication date with smaller,
+   bold purple text. */
+.publication-date {
+    color: #6768ab;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   7. CONTACT PAGE
+========================================== */
+
+/* Contact Heading
+   Creates a centered introduction with a
+   gradient background and top spacing. */
+.contact-heading {
+    background: linear-gradient(to bottom, #e2d3db, #f1e9f6);
+    padding: 130px 30px 50px;
+    text-align: center;
+}
+
+/* Styles the main Contact Me heading. */
+.contact-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: #5e49b8;
+    margin-bottom: 20px;
+}
+
+/* Limits the width of the introductory text
+   and centers it above the contact form. */
+.contact-heading p {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Contact Form Section
+   Adds background color and spacing around the form.
+   BOOTSTRAP: The HTML uses .container, .row,
+   .justify-content-center, and responsive .col classes
+   to center the form and control its width. */
+.contact-main {
+    background-color: #f1e9f6;
+    padding: 30px 20px 90px;
+}
+
+/* BOOTSTRAP - Contact Form Card
+   Customizes Bootstrap's .card with a white
+   background, rounded corners, and a soft shadow. */
+.contact-form-card {
+    background-color: #ffffff;
+    border: 1px solid #e2d3db;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Styles the heading inside the contact form card. */
+.contact-form-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #5e49b8;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* BOOTSTRAP - Form Labels
+   Customizes Bootstrap's .form-label class
+   to make field labels bold and easy to read. */
+.contact-bootstrap-form .form-label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2f2d3b;
+}
+
+/* BOOTSTRAP - Form Inputs and Dropdowns
+   Customizes Bootstrap's .form-control and
+   .form-select classes with full width, padding,
+   rounded corners, and the portfolio's color palette. */
+.contact-bootstrap-form .form-control,
+.contact-bootstrap-form .form-select {
+    width: 100%;
+    padding: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    border: 2px solid #e2d3db;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* BOOTSTRAP - Focus Effect
+   Changes the border color and adds a purple
+   glow when a user selects an input or dropdown.
+   This also replaces Bootstrap's default focus style. */
+.contact-bootstrap-form .form-control:focus,
+.contact-bootstrap-form .form-select:focus {
+    border-color: #6768ab;
+    box-shadow: 0 0 5px rgba(103, 104, 171, 0.3);
+    outline: none;
+}
+
+/* BOOTSTRAP - Submit Button
+   Customizes the button that uses Bootstrap's
+   .btn class with purple coloring, padding,
+   rounded corners, and a pointer cursor. */
+.contact-submit {
+    background-color: #6768ab;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* BOOTSTRAP - Submit Button Hover
+   Darkens the button when the mouse moves over it. */
+.contact-submit:hover {
+    background-color: #5e49b8;
+    color: white;
+}
+
+
+/* ==========================================
+   8. FOOTER - ALL PAGES
+========================================== */
+
+/* Footer Section
+   Creates a dark footer with white text and
+   consistent spacing across all portfolio pages. */
+.footer {
+    background-color: #2f2d3b;
+    color: #ffffff;
+    padding: 40px 30px 20px;
+}
+
+/* Uses CSS Grid to organize the footer into columns.
+   Auto-fit and minmax allow the columns to adjust
+   automatically according to the available space. */
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styles the headings for the personal information,
+   quick links, and contact sections. */
+.footer-section h3,
+.footer-section h4 {
+    color: #9389bd;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Removes list markers and unnecessary spacing
+   from the footer navigation and contact lists. */
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* Adds spacing between individual footer links. */
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+/* Styles footer links with a light text color
+   and a smooth hover transition. */
+.footer-section ul li a {
+    color: #e2d3db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Changes footer link colors when hovered. */
+.footer-section ul li a:hover {
+    color: #9389bd;
+}
+
+/* Footer Scripture
+   Displays the Bible verse in centered,
+   italic text with the decorative font. */
+.footer-scripture {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #e2d3db;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+/* Footer Copyright
+   Centers the copyright text and adds a
+   horizontal border separating it from
+   the other footer content. */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #5e49b8;
+    color: #9389bd;
+}
+
+
+/* ==========================================
+   9. RESPONSIVE DESIGN - ALL PAGES
+========================================== */
+
+/* Responsive Design
+   Media queries adjust layouts, spacing, and font
+   sizes to fit tablets and mobile phones.
+
+   BOOTSTRAP: The Projects, Authorship, and Contact
+   pages also use Bootstrap's responsive grid classes.
+   The rules below provide additional custom styling. */
+
+
+/* ------------------------------------------
+   TABLETS - MAXIMUM WIDTH: 900px
+------------------------------------------ */
+
+/* Changes multi-column layouts to fewer columns
+   so content fits comfortably on tablet screens. */
+@media (max-width: 900px) {
+
+    /* Home Page
+       Changes the hero from two columns to one,
+       centers the text and buttons, and displays
+       the highlight cards in two columns. */
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .highlights-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* About Me Page
+       Stacks the profile image and introduction
+       vertically and displays journey cards
+       in two columns instead of three. */
+    .about-intro-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .about-intro-image {
+        text-align: center;
+    }
+
+    .journey-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Projects Page
+       Changes the CSS Grid project gallery
+       from three columns to two columns.
+       BOOTSTRAP: The cards retain their Bootstrap
+       component styling inside the custom grid. */
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ------------------------------------------
+   MOBILE PHONES - MAXIMUM WIDTH: 768px
+------------------------------------------ */
+
+/* Adjusts navigation, images, cards, forms,
+   and spacing for smaller phone screens. */
+@media (max-width: 768px) {
+
+    /* Navigation Bar
+       Changes the fixed navbar to a normal
+       positioned header and uses Flexbox
+       to stack the logo above the links. */
+    header {
+        position: relative;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Allows navigation links to wrap onto
+       additional rows when space is limited. */
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /* Reduces navigation link sizes and spacing. */
+    nav ul li a {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    /* Home Page
+       Removes the full-screen hero height
+       and reduces spacing for smaller screens. */
+    .hero {
+        min-height: auto;
+        padding: 70px 20px;
+    }
+
+    /* Reduces heading sizes so text fits
+       comfortably on mobile devices. */
+    .hero-content h2 {
+        font-size: 34px;
+    }
+
+    .hero-content h3 {
+        font-size: 20px;
+    }
+
+    /* Makes the profile image smaller on phones. */
+    .hero-image img {
+        max-width: 300px;
+        height: 360px;
+    }
+
+    /* Displays highlight cards in one column. */
+    .highlights-container {
+        grid-template-columns: 1fr;
+    }
+
+    .highlights-section {
+        padding: 60px 20px;
+    }
+
+    /* About Me Page
+       Reduces banner height and section spacing
+       to fit smaller mobile screens. */
+    .about-banner {
+        padding: 30px 15px 20px;
+    }
+
+    .about-banner img {
+        height: 220px;
+    }
+
+    .about-intro {
+        padding: 40px 20px;
+    }
+
+    /* Reduces the introductory heading size
+       and the spacing beside the text border. */
+    .about-heading {
+        font-size: 27px;
+    }
+
+    .about-intro-content {
+        padding-left: 20px;
+    }
+
+    /* Displays journey and quick facts cards
+       in one column for easier mobile reading. */
+    .journey-container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-facts-container {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-section,
+    .about-facts-section {
+        padding: 50px 20px;
+    }
+
+    /* Projects Page
+       Reduces table section spacing and heading size.
+       The minimum table width allows horizontal scrolling
+       inside the overflow-enabled table container. */
+    .project-table-section {
+        padding: 50px 15px;
+    }
+
+    .project-table-section h2 {
+        font-size: 28px;
+    }
+
+    .project-table {
+        min-width: 750px;
+    }
+
+    /* Authorship Page
+       Reduces the heading and publication section
+       spacing to fit smaller screens.
+
+       BOOTSTRAP: Publication cards also use the
+       responsive .col-md-6 and .col-lg-4 classes,
+       which control how many cards fit in each row. */
+    .authorship-hero {
+        padding: 60px 20px 40px;
+    }
+
+    .authorship-hero h2 {
+        font-size: 30px;
+    }
+
+    .publications-section {
+        padding: 40px 15px 60px;
+    }
+
+    .publications-section h2 {
+        font-size: 27px;
+    }
+
+    /* Contact Page
+       Reduces heading and form section spacing
+       for mobile phones.
+
+       BOOTSTRAP: The contact form uses responsive
+       columns that automatically adjust their width. */
+    .contact-heading {
+        padding: 60px 20px 40px;
+    }
+
+    .contact-heading h2 {
+        font-size: 32px;
+    }
+
+    .contact-main {
+        padding: 30px 15px 60px;
+    }
+
+    /* BOOTSTRAP - Mobile Card Body
+       Reduces the padding inside the Bootstrap
+       contact card to provide more room for inputs.
+       Important overrides Bootstrap's .p-4 utility
+       used in the HTML. */
+    .contact-form-card .card-body {
+        padding: 20px !important;
+    }
+
+    /* Reduces the contact form heading size. */
+    .contact-form-card h3 {
+        font-size: 26px;
+    }
+
+    /* Footer
+       Changes the footer from multiple columns
+       into one vertical column on mobile phones. */
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ------------------------------------------
+   SMALL MOBILE PHONES - MAXIMUM WIDTH: 600px
+------------------------------------------ */
+
+/* Makes additional adjustments for very
+   narrow mobile screens. */
+@media (max-width: 600px) {
+
+    /* Projects Page
+       Changes the project gallery to one column
+       so each card can use the available width.
+
+       BOOTSTRAP: The cards still use Bootstrap's
+       .card, .card-body, and .btn styling. */
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reduces the projects heading spacing
+       and font size for smaller phones. */
+    .projects-heading {
+        padding: 60px 20px 35px;
+    }
+
+    .projects-heading h2 {
+        font-size: 34px;
+    }
+
+    /* Reduces the padding around project cards. */
+    .projects-gallery-section {
+        padding: 20px 15px 60px;
+    }
+}
